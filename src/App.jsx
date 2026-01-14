@@ -8,6 +8,9 @@ import App06 from "./react-study/01-jsx-and-component/App06/App06"
 import UseState01 from "./react-study/02-useState/UseState01"
 import UseState02 from "./react-study/02-useState/UseState02"
 import UseState03 from "./react-study/02-useState/UseState03"
+import UseState04 from "./react-study/02-useState/UseState04"
+import UseState05 from "./react-study/02-useState/UseState05"
+import UseState06 from "./react-study/02-useState/UseState06"
 
 function App() {
     return (
@@ -20,7 +23,10 @@ function App() {
         {/* <App06/> */}
         {/* <UseState01 /> */}
         {/* <UseState02 /> */}
-        <UseState03 />
+        {/* <UseState03 /> */}
+        {/* <UseState04 /> */}
+        {/* <UseState05 /> */}
+        <UseState06 />
       </>
   )
 }
