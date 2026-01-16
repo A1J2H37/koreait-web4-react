@@ -19,7 +19,8 @@ const modalStyle = {
 }
 
 
-export default function Modal({post, onClick}) {
+export default function Modal({isOpen, post, onClick}) {
+     if (!isOpen) return null;
     // null, falsy, [], boolean은 jsx에서 표현안됨
     return (
         <div css={overlayStyle}>
