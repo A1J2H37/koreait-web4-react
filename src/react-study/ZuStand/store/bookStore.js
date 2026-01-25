@@ -18,3 +18,45 @@ export const useCurrentBook = create((set) => {
     })
   }
 });
+
+export const useBookList = create((set) => {
+  return {
+    // R
+    books: [{
+      id: "1",
+      title: "젖줒잦",
+      author: "홍길동",
+      price: "25000"
+    }],
+
+    // C - add
+    addBook: (book) => set((prev) => {
+      return {
+        ...prev,
+        // spread로 없던 id key 추가
+        books: [...prev.books, {...book, id: Date.now()}]
+      }
+    }),
+    
+    // U - update
+    updateBook: (id, updatePrice) => set((prev) => {
+      return {
+        ...prev,
+        // map(), filter() -> 새로운 []를 리턴
+        books: prev.books.map((book) => {
+          return book.id === id ? {...book, "price": updatePrice}: book
+        })
+      }
+    }),
+
+    // D - delete
+    // 내가 전달한거 빼고 나머지만
+    removeBook: () => set((prev) => {
+      return {
+        ...prev,
+        books: prev.books.filter((book) => book.id !== id)
+      }
+    })
+
+  }
+})
