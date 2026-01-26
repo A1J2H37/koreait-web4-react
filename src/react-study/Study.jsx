@@ -16,6 +16,9 @@ import UseEffect03 from "./03-useEffect/UseEffect03";
 import UseEffect04 from "./03-useEffect/UseEffect04";
 import UseRef01 from "./04-useRef/UseRef01";
 import UseRef02 from "./04-useRef/UseRef02";
+import Axios01 from "./Axios/Axios01";
+import Axios02 from "./Axios/Axios02";
+import Axios03 from "./Axios/Axios03";
 import Emotion01 from "./Emotion/Emotion01";
 import Emotion02 from "./Emotion/Emotion02";
 import Router01 from "./ReactRouter/Router01/Router01";
@@ -34,8 +37,11 @@ export default function Study() {
     2: <ZuStand02 />,
     3: <Zustand03 />,
     4: <Zustand04 />,
+    5: <Axios01 />,
+    6: <Axios02 />,
+    7: <Axios03 />,
   };
 
 
-  return stateStudy[4]
+  return stateStudy[7]
 }
