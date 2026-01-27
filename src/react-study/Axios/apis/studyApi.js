@@ -8,7 +8,16 @@ const instance = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com"
 });
 
-export const getUserApi = async () => {
+export const getUsersApi = async () => {
   const response = await instance.get("/users");
+  return response;
+}
+
+export const getUserPosts = async (userId) => {
+  const response = await instance.get("/posts", {
+    params: {
+      "userId": userId,
+    }
+  });
   return response;
 }

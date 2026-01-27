@@ -1,21 +1,22 @@
+/** @jsxImportSource @emotion/react */
 import React, { useEffect, useState } from 'react'
 import { css } from '@emotion/react'
 import { useToastStore } from './store/toastStore';
-/** @jsxImportSource @emotion/react */
 
 const toastStyle = css`
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #777;
   color: white;
   padding: 12px 20px;
   border-radius: 8px;
   opacity: 0.8;
-`;
+`
 
 export default function myToast() {
-  const {isVisible, hideToast} = useToastStore();
+  const {isVisible, hideToast, message} = useToastStore();
   useEffect(() => {
       if (isVisible) {
       const timer = setTimeout(() => {
@@ -33,6 +34,6 @@ export default function myToast() {
 
   return (
     // 메세지도 전역으로 관리
-    <div css={toastStyle}></div>
+    <div css={toastStyle}>{message}</div>
   )
 }
