@@ -21,6 +21,7 @@ import Axios02 from "./Axios/Axios02";
 import Axios03 from "./Axios/Axios03";
 import Axios04 from "./Axios/Axios04";
 import Axios05 from "./Axios/Axios05";
+import Axios06 from "./Axios/Axios06";
 import UserRouter from "./Axios/UserPostList/UserRouter";
 import Emotion01 from "./Emotion/Emotion01";
 import Emotion02 from "./Emotion/Emotion02";
@@ -46,8 +47,9 @@ export default function Study() {
     8: <UserRouter />,
     9: <Axios04 />,
     10: <Axios05 />,
+    11: <Axios06 />,
   };
 
 
-  return stateStudy[10]
+  return stateStudy[11]
 }

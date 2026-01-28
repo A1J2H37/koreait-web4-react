@@ -40,3 +40,21 @@ export const addBulkProductApi = async (products) => {
   const response = await instance.post("/add/bulk", products);
   return response;
 }
+
+// 전체 상품 조회 api함수 정의 - get요청
+export const getAllProductApi = async () => {
+  const response = await instance.get("/all");
+  return response;
+}
+
+// 삭제 api함수
+export const deleteProductApi = async (id) => {
+  const response = await instance.delete(`/${id}`);
+  return response;
+}
+
+// 업데이트 api
+export const updateProductApi = async (id, productData) => {
+  const response = await instance.put(`/${id}`, productData);
+  return response;
+}
