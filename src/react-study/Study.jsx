@@ -25,6 +25,10 @@ import Axios06 from "./Axios/Axios06";
 import UserRouter from "./Axios/UserPostList/UserRouter";
 import Emotion01 from "./Emotion/Emotion01";
 import Emotion02 from "./Emotion/Emotion02";
+import ReactQuery01 from "./ReactQuery/ReactQuery01";
+import ReactQuery02 from "./ReactQuery/ReactQuery02";
+import ReactQuery03 from "./ReactQuery/ReactQuery03";
+import ReactQuery04 from "./ReactQuery/ReactQuery04";
 import Router01 from "./ReactRouter/Router01/Router01";
 import Router02 from "./ReactRouter/Router02/Router02";
 import Router03 from "./ReactRouter/Router03/Router03";
@@ -37,19 +41,12 @@ import Zustand04 from "./ZuStand/Zustand04";
 
 export default function Study() {
   const stateStudy = {
-    1: <Zustand01 />,
-    2: <ZuStand02 />,
-    3: <Zustand03 />,
-    4: <Zustand04 />,
-    5: <Axios01 />,
-    6: <Axios02 />,
-    7: <Axios03 />,
-    8: <UserRouter />,
-    9: <Axios04 />,
-    10: <Axios05 />,
-    11: <Axios06 />,
+    1: <ReactQuery01 />,
+    2: <ReactQuery02 />,
+    3: <ReactQuery03 />,
+    4: <ReactQuery04 />,
   };
 
 
-  return stateStudy[11]
+  return stateStudy[4]
 }
