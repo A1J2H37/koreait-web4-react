@@ -44,9 +44,9 @@ export default function Axios01() {
       <table>
         <thead>
           <tr>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>번호</th>
+            <th>이름</th>
+            <th>가격</th>
           </tr>
         </thead>
         <tbody>

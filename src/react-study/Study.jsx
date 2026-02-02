@@ -29,6 +29,7 @@ import ReactQuery01 from "./ReactQuery/ReactQuery01";
 import ReactQuery02 from "./ReactQuery/ReactQuery02";
 import ReactQuery03 from "./ReactQuery/ReactQuery03";
 import ReactQuery04 from "./ReactQuery/ReactQuery04";
+import ReactQuery05 from "./ReactQuery/ReactQuery05";
 import Router01 from "./ReactRouter/Router01/Router01";
 import Router02 from "./ReactRouter/Router02/Router02";
 import Router03 from "./ReactRouter/Router03/Router03";
@@ -45,8 +46,9 @@ export default function Study() {
     2: <ReactQuery02 />,
     3: <ReactQuery03 />,
     4: <ReactQuery04 />,
+    5: <ReactQuery05 />,
   };
 
 
-  return stateStudy[4]
+  return stateStudy[5]
 }
