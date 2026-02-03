@@ -12,7 +12,7 @@ export default function MainLayout() {
   return (
     <div css={s.layout}>
       <Header />
-      <main css={s.name}>
+      <main css={s.main}>
         <Outlet />
       </main>
       <Footer />
