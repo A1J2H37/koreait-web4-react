@@ -11,7 +11,7 @@ export const useAuthStore = create((set) => {
   const accessToken = localStorage.getItem("accessToken");
 
   return {
-    isAuthenticated: true, //!!accessToken,
+    isAuthenticated: !!accessToken,
     accessToken: accessToken,
 
     // 로그인, 로그아웃 mutation에서 onSuccess 호출
