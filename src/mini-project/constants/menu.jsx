@@ -1,4 +1,5 @@
 import Home from "../pages/Home/Home"
+import Signin from "../pages/Signin/Signin"
 import Signup from "../pages/Signup/Signup"
 
 // 상단 header navbar 일반메뉴들
@@ -34,7 +35,7 @@ export const PUBLIC_ROUTES = [
   {
     id: "signin",
     path: "/signin",
-    element: <>로그인화면</>
+    element: <Signin />
   },
   {
     id: "signup",

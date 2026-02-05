@@ -34,6 +34,7 @@ export const title =css`
   color: #333;
   text-align: center;
   margin-bottom: 25px;
+  cursor: default;
 `;
 export const formbox =css`
   display: flex;
@@ -48,6 +49,7 @@ export const btn =css`
   background-color: #4999fc;
   color: white;
   border: none;
+  margin-top: 10px;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -71,6 +73,7 @@ export const linkBox =css`
 export const linkText =css`
   font-size: 14px;
   color: #333;
+  cursor: default;
 `;
 export const link =css`
   font-size: 14px;

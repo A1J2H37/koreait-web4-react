@@ -4,9 +4,8 @@ import * as s from "./styles"
 import only_logo from "../../../assets/only_logo.svg"
 import FormInput from "./components/FormInput";
 import { useForm } from "../../hooks/useForm";
-import { useState } from "react"
-import { useSignupMutation } from "./hooks/useSignup";
-import { TiArrowMinimise } from "react-icons/ti";
+import { useRef, useState } from "react"
+import { useSignupMutation, useSignupValidation } from "./hooks/useSignup";
 
 export default function Signup() {
   const {formVal, handleChange} = useForm({
@@ -18,9 +17,44 @@ export default function Signup() {
   });
   const [errors, setErrors] = useState({});
   const {mutate, isPending} = useSignupMutation();
+  const {newError, isAllValidate} = useSignupValidation(formVal);
+
+  const passwordRef = useRef(null);
+  const passwordConfirmRef = useRef(null);
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  // 엔터시 포커스 내려가게
+  const handleUsernameKeyDown = (e) => {
+    if(e.key === "Enter") {
+      passwordRef.current.focus();
+    }
+  }
+  const handlePasswordKeyDown = (e) => {
+    if(e.key === "Enter") {
+      passwordConfirmRef.current.focus();
+    }
+  }
+  const handlePasswordConfirmKeyDown = (e) => {
+    if(e.key === "Enter") {
+      nameRef.current.focus();
+    }
+  }
+  const handleNameKeyDown = (e) => {
+    if(e.key === "Enter") {
+      emailRef.current.focus();
+    }
+
+    
+
+  }
 
   const handleSubmit = () => {
     if(isPending) return;
+
+    if(!isAllValidate) {
+      setErrors(newError);
+      return;
+    };
     // FE의 validation
 
     const {passwordConfirm, ...signupDto} = formVal;
@@ -55,17 +89,20 @@ export default function Signup() {
             name="username"
             value={formVal.username}
             onChange={handleChange} 
+            onKeyDown={handleUsernameKeyDown}
             placeholder="4~20자의 영문 소문자, 숫자"
             error={errors.username}
-          />
+            />
           <FormInput 
             type="password"
             label="비밀번호"
             name="password"
             value={formVal.password}
             onChange={handleChange} 
+            onKeyDown={handlePasswordKeyDown}
             placeholder="비밀번호를 입력하세요"
             error={errors.password}
+            ref={passwordRef}
             />
           <FormInput 
             type="password"
@@ -73,7 +110,10 @@ export default function Signup() {
             name="passwordConfirm"
             value={formVal.passwordConfirm}
             onChange={handleChange} 
+            onKeyDown={handlePasswordConfirmKeyDown}
             placeholder="비밀번호를 다시 입력하세요"
+            error={errors.passwordConfirm}
+            ref={passwordConfirmRef}
             />
           <FormInput 
             type="text"
@@ -81,8 +121,10 @@ export default function Signup() {
             name="name"
             value={formVal.name}
             onChange={handleChange} 
+            onKeyDown={handleNameKeyDown}
             placeholder="아름을 입력하세요"
             error={errors.name}
+            ref={nameRef}
             />
           <FormInput 
             type="email"
@@ -92,6 +134,7 @@ export default function Signup() {
             onChange={handleChange} 
             placeholder="이메일을 입력하세요"
             error={errors.email}
+            ref={emailRef}
           />
           <button 
             css={s.btn} 
