@@ -19,6 +19,7 @@ export const useForm = (initVal) => {
   return {
       formVal,
       handleChange,
-      resetForm
+      resetForm,
+      setFormVal
     }
 }

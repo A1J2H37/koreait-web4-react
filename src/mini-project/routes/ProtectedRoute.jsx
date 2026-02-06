@@ -3,7 +3,7 @@ import { useAuthStore } from "../stores/authStore";
 
 export default function ProtectedRoute() {
   // ZuStand로 권한훅 - token, 로그인여부 저장
-  const isAuthenticated = useAuthStore();
+  const {isAuthenticated} = useAuthStore();
 
   // 권한이 없다면
   if(!isAuthenticated) {
