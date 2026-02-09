@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query"
-import { getMeApi } from "../../../apis/endpoints/user";
+import { getMeAPI } from "../../../apis/endpoints/user";
 
 export const useMyInfo = () => {
   return useQuery({
     queryKey: ["getMyInfo"],
-    queryFn: getMeApi,
+    queryFn: getMeAPI,
     staleTime: 5 * 60 * 1000 // 5분
   });
 }
